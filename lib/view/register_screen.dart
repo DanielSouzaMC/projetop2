@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:projetop2/auth_errors.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -25,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       });
     } on FirebaseAuthException catch (e) {
       setState(() {
-        _message = e.message ?? 'Erro desconhecido ao criar conta.';
+        _message = handleAuthError(e.code); // Utiliza a função de tratamento de erros
       });
     }
   }
@@ -57,14 +58,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: const Text('Criar Conta'),
             ),
             const SizedBox(height: 10),
-            
             ElevatedButton(
               onPressed: () {
-                    Navigator.pushNamed(context, '/telalogin');
-                },
+                Navigator.pushNamed(context, '/telalogin');
+              },
               child: const Text('Voltar'),
             ),
-            const SizedBox( height: 20),
+            const SizedBox(height: 20),
             Text(
               _message,
               style: const TextStyle(color: Colors.red),

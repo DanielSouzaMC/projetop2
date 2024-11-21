@@ -1,80 +1,82 @@
 // auth_errors.dart
 String handleAuthError(String errorCode) {
   switch (errorCode) {
-    case 'auth/app-not-authorized':
+    case 'app-not-authorized':
       return 'O aplicativo não está autorizado a usar Firebase Authentication.';
-    case 'auth/app-not-installed':
+    case 'app-not-installed':
       return 'O aplicativo necessário não está instalado.';
-    case 'auth/captcha-check-failed':
+    case 'captcha-check-failed':
       return 'Falha na verificação do CAPTCHA.';
-    case 'auth/code-expired':
+    case 'code-expired':
       return 'O código de verificação expirou.';
-    case 'auth/credential-already-in-use':
+    case 'credential-already-in-use':
       return 'Essa credencial já está em uso por outra conta.';
-    case 'auth/custom-token-mismatch':
+    case 'custom-token-mismatch':
       return 'O token personalizado é inválido.';
-    case 'auth/email-already-in-use':
+    case 'email-already-in-use':
       return 'O e-mail informado já está em uso.';
-    case 'auth/expired-action-code':
+    case 'expired-action-code':
       return 'O código de ação expirou.';
-    case 'auth/invalid-action-code':
+    case 'invalid-action-code':
       return 'O código de ação é inválido.';
-    case 'auth/invalid-credential':
+    case 'invalid-credential':
       return 'Credenciais inválidas. Verifique os dados informados.';
-    case 'auth/invalid-email':
+    case 'invalid-email':
       return 'E-mail inválido. Insira um e-mail válido.';
-    case 'auth/invalid-phone-number':
+    case 'invalid-phone-number':
       return 'Número de telefone inválido.';
-    case 'auth/invalid-verification-code':
+    case 'invalid-verification-code':
       return 'Código de verificação inválido.';
-    case 'auth/invalid-verification-id':
+    case 'invalid-verification-id':
       return 'ID de verificação inválido.';
-    case 'auth/missing-email':
+    case 'missing-email':
       return 'E-mail ausente. Insira seu e-mail.';
-    case 'auth/missing-phone-number':
+    case 'missing-phone-number':
       return 'Número de telefone ausente.';
-    case 'auth/missing-password':
+    case 'missing-password':
       return 'Insira sua senha.';
-    case 'auth/network-request-failed':
+    case 'network-request-failed':
       return 'Erro de conexão. Verifique sua internet.';
-    case 'auth/no-signed-in-user':
+    case 'no-signed-in-user':
       return 'Nenhum usuário conectado.';
-    case 'auth/operation-not-allowed':
+    case 'operation-not-allowed':
       return 'Operação não permitida. Entre em contato com o suporte.';
-    case 'auth/phone-number-already-exists':
+    case 'phone-number-already-exists':
       return 'O número de telefone já está em uso.';
-    case 'auth/provider-already-linked':
+    case 'provider-already-linked':
       return 'Esse provedor já está vinculado à conta.';
-    case 'auth/quota-exceeded':
+    case 'quota-exceeded':
       return 'Limite de cota do Firebase Authentication excedido.';
-    case 'auth/requires-recent-login':
+    case 'requires-recent-login':
       return 'Reautenticação necessária. Faça login novamente.';
-    case 'auth/session-cookie-expired':
+    case 'session-cookie-expired':
       return 'O cookie de sessão expirou.';
-    case 'auth/session-cookie-revoked':
+    case 'session-cookie-revoked':
       return 'O cookie de sessão foi revogado.';
-    case 'auth/too-many-requests':
+    case 'too-many-requests':
       return 'Muitas tentativas. Tente novamente mais tarde.';
-    case 'auth/unauthorized-continue-uri':
+    case 'unauthorized-continue-uri':
       return 'A URL de continuação não está autorizada.';
-    case 'auth/unverified-email':
+    case 'unverified-email':
       return 'O e-mail ainda não foi verificado.';
-    case 'auth/user-cancelled':
+    case 'user-cancelled':
       return 'A ação foi cancelada pelo usuário.';
-    case 'auth/user-disabled':
+    case 'user-disabled':
       return 'Conta desativada. Entre em contato com o suporte.';
-    case 'auth/user-mismatch':
+    case 'user-mismatch':
       return 'As credenciais não correspondem ao usuário.';
-    case 'auth/user-not-found':
+    case 'user-not-found':
       return 'Usuário não encontrado. Verifique o e-mail.';
-    case 'auth/weak-password':
+    case 'weak-password':
       return 'Senha fraca. Escolha uma senha mais forte.';
-    case 'auth/wrong-password':
+    case 'wrong-password':
       return 'Senha incorreta. Tente novamente.';
-    case 'auth/unregistered':
+    case 'unregistered':
       return 'Usuário não registrado.';
-    case 'auth/invalid-continue-uri':
+    case 'invalid-continue-uri':
       return 'A URL de continuação fornecida é inválida.';
+      case 'missing-password':
+      return 'Digite sua senha';
     default:
       return 'Erro desconhecido. Código: $errorCode';
   }

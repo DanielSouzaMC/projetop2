@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:projetop2/auth_errors.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
@@ -23,7 +24,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
       });
     } on FirebaseAuthException catch (e) {
       setState(() {
-        _message = e.message ?? 'Erro ao recuperar senha.';
+        _message = handleAuthError(e.code); 
       });
     }
   }
@@ -49,11 +50,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               onPressed: _resetPassword,
               child: const Text('Enviar e-mail'),
             ),
-            const SizedBox(height:  20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                    Navigator.pushNamed(context, '/telalogin');
-                },
+                Navigator.pushNamed(context, '/telalogin');
+              },
               child: const Text('Voltar'),
             ),
             const SizedBox(height: 20),
